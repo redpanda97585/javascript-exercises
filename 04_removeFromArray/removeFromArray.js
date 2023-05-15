@@ -1,8 +1,20 @@
-const removeFromArray = function(array, ...args) {
+const removeFromArray = function (array, ...restArgs) {
     let givenArray = array;
-    let restParameters = args;  
-    let newArray = givenArray.filter(item => !restParameters.includes(item));
+    let restArguments = restArgs;
+    const newArray = [];
+
+    givenArray.forEach((element) => {
+        if (!restArguments.includes(element)) {
+            newArray.push(element);
+        }
+    });
     return newArray;
 };
+
+const qremoveFromArray = (array, ...restArgs) => {
+    return array.filter(element => !restArgs.includes(element))
+}
+
+
 // Do not edit below this line
 module.exports = removeFromArray;
