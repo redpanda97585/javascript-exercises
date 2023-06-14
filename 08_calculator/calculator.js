@@ -49,11 +49,11 @@ const power = function (...givenNumbers) {
   return result;
 };
 
-const factorial = function (givenNumber) {
-  const number = givenNumber;
-  let result = 0;
-  for (let n = number; n >= 0; n--) {
-    result = number * (number - n);
+const factorial = function (n) {
+  if (n === 0) return 1;
+  let result = 1;
+  for (let i = n; i > 0; i--) {
+    result *= i;
   };
   return result;
 };
