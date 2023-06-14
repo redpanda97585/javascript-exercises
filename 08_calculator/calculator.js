@@ -6,33 +6,54 @@ const add = function (...givenNumbers) {
 
 const subtract = function (...givenNumbers) {
   const numbers = Array.from(givenNumbers);
-  const result = numbers.reduce((total, number) => total - number, 0);
+  let result = -1;
+  for (const number of numbers) {
+    if (result === -1) {
+      result = number;
+    } else {
+      result -= number;
+    };
+  };
   return result;
 };
 
-const sum = function (...givenNumbers) {
-  const numbers = Array.from(givenNumbers);
+const sum = function (givenNumbers) {
+  const numbers = givenNumbers;
   const result = numbers.reduce((total, number) => total + number, 0);
   return result;
 };
 
-const multiply = function (...givenNumbers) {
-  const numbers = Array.from(givenNumbers);
-  const result = numbers.reduce((total, number) => total * number, 0);
+const multiply = function (givenNumbers) {
+  const numbers = givenNumbers;
+  let result = -1;
+  for (const number of numbers) {
+    if (result === -1) {
+      result = number;
+    } else {
+      result *= number;
+    };
+  };
   return result;
 };
 
 const power = function (...givenNumbers) {
   const numbers = Array.from(givenNumbers);
-  const result = numbers.reduce((total, number) => total ** number, 0);
+  let result = -1;
+  for (const number of numbers) {
+    if (result === -1) {
+      result = number;
+    } else {
+      result **= number;
+    };
+  };
   return result;
 };
 
 const factorial = function (givenNumber) {
   const number = givenNumber;
   let result = 0;
-  for (let i = number; i <= 0; i--) {
-    result += i
+  for (let n = number; n >= 0; n--) {
+    result = number * (number - n);
   };
   return result;
 };
