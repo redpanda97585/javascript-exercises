@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    const palindromes = function (givenWord) {
+        const original = Array.from(givenWord);
+        const reversed = Array.from(givenWord).reverse();
+
+        let new1 = original.map(e => {
+            const index = original.indexOf(e);
+            original[index] = original[index].toLowerCase();
+            if (e === " " || e === '!' || e === '.' || e === ',') {
+                const index = original.indexOf(e);
+                original.splice(index,1);
+            };
+        });
+        reversed.forEach(e => {
+            const index = reversed.indexOf(e);
+            reversed[index] = reversed[index].toLowerCase();
+            if (e === " " || e === ','|| e === '!' || e === '.') {
+                const index = reversed.indexOf(e);
+                reversed.splice(index,1);
+            };
+        });
+        console.log(new1);
+        if (JSON.stringify(new1) === JSON.stringify(reversed)) {
+            return true;
+        } else {
+            return false;
+        };
+        // indexOf()
+        // splice(index, 1)
+    };
+    </script>
+</body>
+</html>
